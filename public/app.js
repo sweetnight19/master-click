@@ -5,6 +5,9 @@ let textMessage = document.querySelector("#textMessage");
 let usersConnected = document.getElementById("counter");
 let numClicksText = document.getElementById("clicksTxt");
 
+let ClicksUserText = document.getElementById("totalClicksUser");
+let ClicksUser = 0;
+
 const urlParams = new URLSearchParams(window.location.search);
 
 const socket = io();
@@ -47,9 +50,12 @@ socket.on("connect", () => {
 socket.on("numero de usuarios", (data) => {
     usersConnected.innerText = data.usersConnected;
     numClicksText.innerHTML = data.numClicks;
+    ClicksUserText.innerHTML = ClicksUser;
 });
 socket.on("new click", (data) => {
     numClicksText.innerText = data.numClicks;
+    ClicksUser++;
+    ClicksUserText.innerText = ClicksUser;
 });
 
 sendButton.onclick = () => {

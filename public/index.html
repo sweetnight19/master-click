@@ -1,37 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Socke.io Client Example</title>
-        <style>
-            @import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
 
-            * {
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-                font-family: "Nunito", sans-serif;
-            }
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Socke.io Client Example</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
 
-            .game {
-                display: flex;
-                flex-direction: row;
-                gap: 3em;
-            }
-        </style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Nunito", sans-serif;
+        }
 
-        <script src="https://cdn.socket.io/socket.io-3.0.0.js"></script>
-        <script defer src="app.js"></script>
-    </head>
-    <body>
-        <div id="app">
-            <h1>Master.Click.io <small id="counter">0</small></h1>
-            <div class="game">
-                <button id="sendButton">Enviar</button>
-                <div id="clicksTxt"></div>
-            </div>
+        .game {
+            display: flex;
+            flex-direction: row;
+            gap: 3em;
+        }
+    </style>
+
+    <script src="https://cdn.socket.io/socket.io-3.0.0.js"></script>
+    <script defer src="app.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <h1>Master.Click.io <small id="counter">0</small></h1>
+        <div class="game">
+            <button id="sendButton">Enviar</button>
+            <p>Clicks totales: </p>
+            <div id="clicksTxt"></div>
+            <p>Clicks del usuario: </p>
+            <div id="totalClicksUser"></div>
         </div>
-    </body>
+    </div>
+</body>
+
 </html>
